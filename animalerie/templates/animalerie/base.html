@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+    <head>
+        <title>My animalerie</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="shortcut icon" href="{%  static 'icon.ico' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'css/animalerie.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">Animalerie</a></h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                {% block pets %}
+                {% endblock %}
+            </div>
+            <div class="col-md-6">
+                    {% block equips %}
+                    {% endblock %}
+            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

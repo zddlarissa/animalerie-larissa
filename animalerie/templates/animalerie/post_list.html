@@ -1,0 +1,29 @@
+{% extends 'animalerie/base.html' %}
+
+{% block pets %}
+    <h2 style="text-align:center"><a>Les animaux</a></h2>
+    <div class="grid-container">
+    {% for animal in animals %}
+        <div class="grid-item text-center">
+            <h3><a href="{% url 'animal_detail' id_animal=animal.id_animal %}">{{ animal.id_animal }}</a></h3>
+            <img src={{animal.photo}} width="300px" height="300px">
+            <p>État: <span><e1> {{animal.etat}} </e1></span> </p>
+            <p>Lieu: <span><e1> {{animal.lieu}} </e1></span> </p>
+            <a href="{% url 'animal_detail' id_animal=animal.id_animal %}" class="btn btn-info" role="button">DÉTAILS</a>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
+
+{% block equips %}
+    <h2 style="text-align:center"><a>Les équipements</a></h2>
+    <div class="grid-container">
+    {% for equip in equipements %}
+        <div class="grid-item text-center">
+            <h3><a href="">{{ equip.id_equip }}</a></h3>
+            <img src={{equip.photo}} width="300px" height="300px">
+            <p>Disponibilité: <span><e1> {{ equip.disponibilite }} </e1></span> </p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
